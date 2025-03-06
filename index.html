@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Gallery</title>
+    <style>
+
+         .title {
+            font-size: 50px; /* Adjust size as needed */
+            font-weight: bold;
+        }
+        
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .food-item {
+            background: white;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .food-item img {
+            width: 100%;
+            border-radius: 10px;
+            height: auto;
+        }
+        h2 {
+            color: #333;
+        }
+        .food-item img {
+    width: 100%;
+    border-radius: 10px;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.food-item {
+    transition: transform 0.3s ease-in-out;
+    display: inline-block;
+}
+.food-item {
+   background-color: #a5978b;
+}
+
+.food-item:hover {
+    transform: scale(1.1);
+}
+
+body {
+            background-color: #5c4742;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background 0.3s, color 0.3s;
+        }
+ 
+
+
+        /* Dark Mode Styles */
+        .dark-mode {
+            background-color: #121212;
+            color: white;
+        }
+
+        /* Toggle Button */
+        .toggle-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            background: #007bff;
+            color: white;
+        }
+
+        .toggle-btn:hover {
+            background: #0056b3;
+        }
+        
+        .price {
+    font-size: 18px;
+    color: #5a2a27;
+    font-weight: bold;
+    margin-top: 10px;
+}
+ /* Fullscreen Loader */
+ #loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #f3f3f3;
+            border-top: 5px solid #3498db;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Hide loader after page load */
+        body.loaded #loader {
+            display: none;
+        }
+       
+        
+
+    
+
+
+
+
+    </style>
+    
+
+</head>
+<body>
+    <h1 class="title">Agniveer Momos Cafe</h1>
+
+    <div class="container">
+        <div class="food-item">
+            <h2>Burger</h2>
+            <img src="https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg" width="487" height="626" alt="Delicious burger in studio" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 487/626) 540.6789137380191px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=360 360w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=740 740w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=826 826w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=900 900w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=996 996w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=1060 1060w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=1380 1380w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=1480 1480w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=1800 1800w, https://img.freepik.com/free-photo/delicious-burger-studio_23-2151846493.jpg?t=st=1741177381~exp=1741180981~hmac=69e5c923c3282743cfd54750ded5560e5e052afa7f964b490cb4a489ac94b5c4&amp;w=2000 2000w" fetchpriority="high" style="max-width: 540.679px; max-height: 695px;">
+            <p class="price">  &#8377; 25 </p>
+        </div>
+        <div class="food-item">
+            <h2>Paneer Burger</h2>
+            <img src="https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg" width="626" height="782" alt="Burger with tomato, lettuce, melted chees and french fries, ketcup, close up" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=360 360w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=740 740w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=826 826w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=900 900w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=996 996w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=1060 1060w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=1380 1380w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=1480 1480w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=1800 1800w, https://img.freepik.com/free-photo/burger-with-tomato-lettuce-melted-chees-french-fries-ketcup-close-up_140725-191.jpg?t=st=1741278679~exp=1741282279~hmac=727a34a6719c7c7bd41b348c5de13b68a1b2b1cfd0b8170b74c1f4e3c6a3d7e1&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">
+            <p class="price">  &#8377; 30 </p>
+        </div>
+        <div class="food-item">
+            <h2>Veg Momo</h2>
+            <img src="https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg" width="626" height="782" alt="Khinkali served with greens and sauce" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=360 360w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=740 740w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=826 826w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=900 900w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=996 996w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1060 1060w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1380 1380w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1480 1480w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1800 1800w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">
+            <p class="price"> &#8377; 30</p>
+        </div>
+        <div class="food-item">
+            <h2>Spring Roll</h2>
+            <img src="https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg" width="626" height="782" alt="Top view of fried spring rolls with chicken and vegetables served with soy sauce on a plate on black" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=360 360w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=740 740w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=826 826w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=900 900w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=996 996w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=1060 1060w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=1380 1380w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=1480 1480w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=1800 1800w, https://img.freepik.com/free-photo/top-view-fried-spring-rolls-with-chicken-vegetables-served-with-soy-sauce-plate-black_141793-11984.jpg?t=st=1741178807~exp=1741182407~hmac=85b2acf21694b99175a3b5128a350160f2c4281952e6bf87bd8e1e32eb069618&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">
+            <p class="price"> &#8377; 30</p>
+        </div>
+        <div class="food-item">
+            <h2>French Fries</h2>
+            <img src="https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg" width="487" height="626" alt="Delicious fries in studio" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 487/626) 540.6789137380191px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=360 360w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=740 740w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=826 826w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=900 900w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=996 996w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=1060 1060w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=1380 1380w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=1480 1480w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=1800 1800w, https://img.freepik.com/free-photo/delicious-fries-studio_23-2151846528.jpg?t=st=1741178847~exp=1741182447~hmac=3ca56e03b20ed4f4b6305b55a7486862c3877c8d7a232df072714b1b36c12d27&amp;w=2000 2000w" fetchpriority="high" style="max-width: 540.679px; max-height: 695px;">
+            <p class="price">Half 30 &#8377;<br>Full 60 &#8377;</p>
+
+        </div>
+        <div class="food-item">
+            <h2>Paneer Momo</h2>
+            <img src="https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg" width="626" height="782" alt="Khinkali served with greens and sauce" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=360 360w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=740 740w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=826 826w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=900 900w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=996 996w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1060 1060w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1380 1380w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1480 1480w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=1800 1800w, https://img.freepik.com/free-photo/khinkali-served-with-greens-sauce_141793-773.jpg?t=st=1741178656~exp=1741182256~hmac=394e754ee3cf604353776e5208f06801771a81d1adb51099c30c867ff0ac72bd&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">
+            <p class="price">40 &#8377;</p>
+        </div>
+        <div class="food-item">
+            <h2>Kurkure Veg Momo</h2>
+            <img src="https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg" width="626" height="782" alt="Spicy georgian khinkali with adjika" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=360 360w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=740 740w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=826 826w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=900 900w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=996 996w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=1060 1060w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=1380 1380w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=1480 1480w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=1800 1800w, https://img.freepik.com/free-photo/spicy-georgian-khinkali-with-adjika_140725-4429.jpg?t=st=1741279333~exp=1741282933~hmac=f056293442d9dc97842a99f491027783a46763474fca3168c9ee2777f20392a9&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">         
+             <p class="price">50 &#8377;</p>
+        </div>
+        <div class="food-item">
+            <h2>Fried Rice</h2>
+            <img src="https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg" width="626" height="782" alt="A bowl of chicken caesar salad with extra grated cheese" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=360 360w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=740 740w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=826 826w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=900 900w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=996 996w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=1060 1060w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=1380 1380w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=1480 1480w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=1800 1800w, https://img.freepik.com/free-photo/bowl-chicken-caesar-salad-with-extra-grated-cheese_140725-2603.jpg?t=st=1741179121~exp=1741182721~hmac=74dafa653a9faf80fbd731866e09229ddf3830dd3ea86411b2ef7316e84ff66e&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">
+            <p class="price">35 &#8377;</p>
+        </div>
+        <div class="food-item">
+            <h2>Chawmen</h2>
+            <img src="https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg" width="626" height="782" alt="Noodle with chicken in a bowl side view" class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/782) 556.3554987212276px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=360 360w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=740 740w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=826 826w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=900 900w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=996 996w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=1060 1060w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=1380 1380w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=1480 1480w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=1800 1800w, https://img.freepik.com/free-photo/noodle-with-chicken-bowl-side-view_141793-2406.jpg?t=st=1741180199~exp=1741183799~hmac=7ebf5ebca0770dd428815a9a9f9ec380329bc2e698be5ec6de11476c549b5fa1&amp;w=2000 2000w" fetchpriority="high" style="max-width: 556.355px; max-height: 695px;">
+            <p class="price"> 30 &#8377;<br> Full &#8377; 60<br> Paneer Chawmen &#8377; 45 </p>
+        </div>
+        <div class="food-item">
+            <h2>Fried Paneer Momo</h2>
+            <img src="https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg" width="626" height="776" alt="Gyoza in a black cup with Sushi." class="$inline-block $h-auto $w-full $overflow-hidden $object-contain $relative" sizes="(max-width: 480px) 100vw, (min-aspect-ratio: 626/776) 560.6572164948453px, (max-width: 1096px) calc(100vw - 40px), calc(100vw - 540px)" srcset="https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=360 360w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=740 740w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=826 826w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=900 900w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=996 996w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=1060 1060w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=1380 1380w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=1480 1480w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=1800 1800w, https://img.freepik.com/free-photo/gyoza-black-cup-with-sushi_1150-22650.jpg?t=st=1741180439~exp=1741184039~hmac=66fb7dc08eeec50d4a59d137e4aa444cdb0bad8ae8d0e847f2919e96c8746c0d&amp;w=2000 2000w" fetchpriority="high" style="max-width: 560.657px; max-height: 695px;">
+            <p class="price">45 &#8377;</p>
+        </div>
+
+    </div>
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+   
+    <button id="mode-toggle" class="toggle-btn"> Dark Mode</button>
+
+    
+        <p>owner name</p>
+        <p>created by : Shivam Prasad contact: shivamprasad935@gmail.com</p>
+    
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const toggleButton = document.getElementById("mode-toggle");
+            toggleButton.addEventListener("click", function() {
+                document.body.classList.toggle("dark-mode");
+            });
+        });
+
+        window.addEventListener("load", function() {
+            document.body.classList.add("loaded");
+        });
+    </script>
+</body>
+</html>
