@@ -149,6 +149,17 @@ body {
             100% { transform: rotate(2turn); }
         }
 
+        .food-item {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.food-item.visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
 
 
 
@@ -236,12 +247,29 @@ body {
             });
         });
 
+        document.addEventListener("DOMContentLoaded", function () {
+    const foodItems = document.querySelectorAll(".food-item");
+
+    function checkVisibility() {
+        foodItems.forEach((item) => {
+            const rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                item.classList.add("visible");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", checkVisibility);
+    checkVisibility(); // Initial check when page loads
+});
+
         
 
        //new
         setTimeout(function() {
             document.body.classList.add('loaded');
         }, 3000);
+
     </script>
 </body>
 </html>
