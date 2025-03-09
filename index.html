@@ -61,6 +61,14 @@ body {
             text-align: center;
             transition: background 0.3s, color 0.3s;
         }
+        .title {
+    color: #ad9292; /* Red color for heading */
+    font-size: 48px; /* Bigger font */
+    font-weight: bold; /* Bold text */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Adding shadow for depth */
+    padding: 20px;
+  }
+ 
  
 
 
@@ -103,30 +111,43 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .spinner {
-            width: 50px;
-            height: 50px;
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #3498db;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            z-index: 1000;
         }
 
         /* Hide loader after page load */
         body.loaded #loader {
             display: none;
         }
-       
-        
 
-    
+        /* Loader Animation */
+        .loader {
+            width: 50px;
+            aspect-ratio: 1;
+            display: grid;
+            border: 4px solid transparent;
+            border-radius: 50%;
+            border-right-color: #25b09b;
+            animation: spin 3s linear 1; /* Runs for 3 seconds only */
+        }
+
+        .loader::before,
+        .loader::after {    
+            content: "";
+            grid-area: 1/1;
+            margin: 2px;
+            border: inherit;
+            border-radius: 50%;
+            animation: spin 3s linear 1;
+        }
+
+        .loader::after {
+            margin: 8px;
+            animation-duration: 3s;
+        }
+
+        @keyframes spin { 
+            100% { transform: rotate(2turn); }
+        }
 
 
 
@@ -137,6 +158,9 @@ body {
 </head>
 <body>
     <h1 class="title">Agniveer Momos Cafe</h1>
+    <p>Welcome to Agniveer Momos Cafe! Enjoy our delicious menu.</p>
+    <hr class="divider">
+
 
     <div class="container">
         <div class="food-item">
@@ -193,8 +217,9 @@ body {
 
     </div>
     <div id="loader">
-        <div class="spinner"></div>
+        <div class="loader"></div> 
     </div>
+    
    
     <button id="mode-toggle" class="toggle-btn"> Dark Mode</button>
 
@@ -211,9 +236,12 @@ body {
             });
         });
 
-        window.addEventListener("load", function() {
-            document.body.classList.add("loaded");
-        });
+        
+
+       //new
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 3000);
     </script>
 </body>
 </html>
